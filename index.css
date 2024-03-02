@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    background: #081b29;
+}
+header{
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background: #081b29;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header h1{
+    width: 350px;
+    font-size: 40px;
+    color: #00abf0;
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 1s steps(21),cursor .4s step-end infinite alternate;
+}
+@keyframes cursor{
+    75% {
+        border-color: transparent;
+    }
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+}
+.type{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    height: 90vh;
+    align-items: center;
+}
+.type .codeInput{
+    height: 80vh;
+    width: 40%;
+    resize: none;
+    padding: 10px;
+    padding-right: 42px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #00abf0;
+    border: 2px solid azure;
+    background-color: rgb(27, 26, 26);
+    border-radius: 10px;
+}
+.type .codeInput:focus{
+    border: none;
+    outline: 2px solid #00abf0;
+}
+.type .codeInput:focus::placeholder{
+    color: #00abf0;
+}
+.type .codeInput::selection{
+    background: #00abf0;
+    color: #081b29;
+}
+.button{
+    position: relative;
+    border: 2px solid #00abf0;
+    background: #00abf0;
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #081b29;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: .5s;
+}
+.button::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+.button:hover{
+    background: #081b29;
+    color: #00abf0;
+}
+.button:hover:before{
+    width: 100%;
+}
+.type .cpy-btn{
+    position: absolute;
+    background: transparent;
+    right: 40px;
+    top: 50px;
+    color: grey;
+}
+.type .cpy-btn:active{
+    color: #00abf0;
+}
+.type .cpy-btn::before{
+    content: "Copied";
+    position: absolute;
+    top: -48px;
+    right: -15px;
+    background: #00abf0;
+    padding: 3px 6px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #081b29;
+    display: none;
+}
+.type .cpy-btn::after{
+    content: '';
+    position: absolute;
+    top: -31px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background: #00abf0;
+    transform: rotate(45deg);
+    display: none;
+}
+.type .cpy-btn button:before,
+.type .cpy-btn button:after{
+    display: block;
+}

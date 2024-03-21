@@ -7,3 +7,8 @@ beautifyButton.addEventListener("click", () => {
     const beautifiedCode = js_beautify(inputCode, { indent_size: 2, brace_style: "collapse" });
     codeOutput.textContent = beautifiedCode;
 });
+function copy(){
+    let text=document.getElementById("codeOp");
+    text.select();
+    document.execCommand("copy");
+}
